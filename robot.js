@@ -1,14 +1,12 @@
-const Cylon = require("cylon");
-const { devices } = require("./config");
+const Cylon = require('cylon')
+const { devices } = require('./config')
 
 /**
- *
- * @param {Object} my
- * Receive a Cylon Robot object and turnOff all the LEDs
+ * Turn off all the LEDs
  */
-const resetLeds = (my) => {
-  handleLeds([0, 0, 0, 0, 0]);
-};
+const resetLeds = () => {
+  handleLeds([0, 0, 0, 0, 0])
+}
 
 /**
  *
@@ -17,20 +15,20 @@ const resetLeds = (my) => {
  */
 const handleLeds = (leds = []) => {
   const robot = Cylon.robot({
-    connections: { raspi: { adaptor: "raspi" } },
+    connections: { raspi: { adaptor: 'raspi' } },
     devices,
     work: function (my) {
       leds.forEach((led, index) => {
-        const deviceName = devices[index].name;
+        const deviceName = devices[index].name
 
         led === 1
           ? my.devices[deviceName].turnOn()
-          : my.devices[deviceName].turnOff();
-      });
+          : my.devices[deviceName].turnOff()
+      })
     },
-  });
+  })
 
-  robot.start();
-};
+  robot.start()
+}
 
-module.exports = { handleLeds, resetLeds };
+module.exports = { handleLeds, resetLeds }
