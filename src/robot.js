@@ -1,5 +1,5 @@
 const Cylon = require('cylon')
-const { devices } = require('./config')
+const { devices } = require('../config')
 
 /**
  * Turn off all the LEDs

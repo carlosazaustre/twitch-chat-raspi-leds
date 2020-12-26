@@ -1,8 +1,8 @@
 const tmi = require('tmi.js')
 
-const config = require('./config')
 const { getCommand, getLeds } = require('./helpers')
 const { handleLeds, resetLeds } = require('./robot')
+const config = require('../config')
 
 const debug = process.env.NODE_ENV
 const commands = {
