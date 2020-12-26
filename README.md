@@ -30,6 +30,27 @@ Also, you can change the LEDs positions in your Raspberry Pi GPIO pines:
 }
 ```
 
+Run the program in your Raspberry. You will need to connect via SSH or using a Keyboard/Monitor plugged in the Raspberry.
+
+I highly recommend to use a `upstart service` o `pm2` service to run the programa inside the Raspberry.
+
+```
+pi@raspberrypi:~$ npm install -g pm2
+$ p2m start twitch-chat-raspi-leds/index.js --name 'twitch-leds'
+
+pi@raspberrypi:~$ pm2 start twitch-chat-raspi-leds --name 'twitch-leds'
+[PM2] Spawning PM2 daemon with pm2_home=/home/pi/.pm2
+[PM2] PM2 Successfully daemonized
+[PM2] Starting /home/pi/_test-leds in fork_mode (1 instance)
+[PM2] Done.
+┌────┬────────────────────┬──────────┬──────┬───────────┬──────────┬──────────┐
+│ id │ name               │ mode     │ ↺    │ status    │ cpu      │ memory   │
+├────┼────────────────────┼──────────┼──────┼───────────┼──────────┼──────────┤
+│ 0  │ twitch-leds        │ fork     │ 0    │ online    │ 0%       │ 21.7mb   │
+└────┴────────────────────┴──────────┴──────┴───────────┴──────────┴──────────┘
+
+```
+
 ## Usage
 
 In your twitch chat, write down the following command:
