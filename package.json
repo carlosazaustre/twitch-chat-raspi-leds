@@ -1,0 +1,35 @@
+{
+  "name": "twitch-chat-leds",
+  "version": "0.1.0",
+  "description": "Let to Twitch chat users to interact with RaspberryPi LEDs",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest",
+    "start": "NODE_ENV=production node index.js",
+    "dev": "NODE_ENV=development nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carlosazaustre/twitch-chat-raspi-leds.git"
+  },
+  "keywords": [
+    "raspberry",
+    "raspberry-pi",
+    "twitch",
+    "chat",
+    "led"
+  ],
+  "author": "Carlos Azaustre <cazaustre@gmail.com> (https://carlosazaustre.es/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/carlosazaustre/twitch-chat-raspi-leds/issues"
+  },
+  "homepage": "https://github.com/carlosazaustre/twitch-chat-raspi-leds#readme",
+  "devDependencies": {
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.6"
+  },
+  "dependencies": {
+    "tmi.js": "^1.7.0"
+  }
+}
