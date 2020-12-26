@@ -2,6 +2,7 @@ const tmi = require("tmi.js");
 
 const config = require("./config");
 const { getCommand, getLeds } = require("./helpers");
+const { handleLeds, resetLeds } = require("./robot");
 
 const debug = process.env.NODE_ENV;
 const commands = {
@@ -14,7 +15,7 @@ const client = new tmi.Client({
     secure: true,
     reconnect: true,
   },
-  ...config,
+  ...config.options,
 });
 
 const handleMessage = (channel, tags, message, self) => {
@@ -23,7 +24,8 @@ const handleMessage = (channel, tags, message, self) => {
   const [command, args] = getCommand(message);
   if (command === commands.LED && args !== undefined) {
     const leds = getLeds(args);
-    leds.forEach((led) => console.log(led));
+    resetLeds();
+    handleLeds(leds);
   }
   return;
 };
