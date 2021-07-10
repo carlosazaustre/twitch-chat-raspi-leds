@@ -4,6 +4,12 @@ Control Raspberry Pi LEDs connected to GPIO via Twitch Chat.
 
 Tested on Raspberry Pi v2 Model B (2012, ARMv6)
 
+## YouTube Video Tutorial
+[https://youtu.be/AbuJbDUK2jI](https://youtu.be/AbuJbDUK2jI)
+
+[![JavaScript in Raspberry Pi](https://user-images.githubusercontent.com/650752/125165431-1f842f80-e197-11eb-9935-2b192f790451.png)](https://youtu.be/AbuJbDUK2jI)
+
+
 ## Installation
 
 Clone this repository and change the following values in `config/index.js`:
